@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Tab Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #upload-box {
+            border: 2px dashed #aaa;
+            padding: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guitar & Bass Notation to Tab Converter</h1>
+    <p>Upload an image of sheet music, and we’ll convert it into tablature.</p>
+    
+    <div id="upload-box" onclick="document.getElementById('file-input').click()">
+        Click to Upload Image
+    </div>
+    <input type="file" id="file-input" accept="image/*">
+    
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                alert('File uploaded: ' + file.name);
+                // Next step: Send this file to a backend for processing
+            }
+        });
+    </script>
+</body>
+</html>
